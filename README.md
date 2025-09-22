@@ -1,8 +1,8 @@
 # Notes for the book "Tools and Skills for .NET 8" by Mark J. Price 
 
-# Команды в Linux
+## Команды в Linux
 
-## Toolbox
+### Toolbox
 
 1. Создание именного toolbox с определенным image
 
@@ -29,7 +29,7 @@ sudo apt-get update
 sudo apt-get install foot-terminfo
 ```
 
-## Установка .NET8 в ubuntu
+### Установка .NET8 в ubuntu
 
 **Источник: https://learn.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu-install?tabs=dotnet8&pivots=os-linux-ubuntu-2404**
 
@@ -47,7 +47,7 @@ dotnet --version
 dotnet --list-sdks
 ```
 
-## Установка .NET8 в ubuntu через менеджер пакетов
+### Установка VSCode в ubuntu через менеджер пакетов
 
 **Источник: https://code.visualstudio.com/docs/setup/linux**
 
@@ -81,7 +81,7 @@ sudo apt update
 sudo apt install code # or code-insiders
 ```
 
-## Git
+### Git
 
 1. Конфигурация git
 
@@ -115,3 +115,50 @@ git config user.email
 dotnet new gitignore
 ```
 
+3. Установка token для push изменений
+
+```bash
+git remote set-url origin https://artag:{token}@github.com/artag/tools-skills-net8-notes.git
+```
+
+где вместо `{token}` вставить живой token. Если все сделано правильно, то должен пройти
+
+```bash
+git push
+```
+
+## Chapter 1
+
+### VSCode. Расширения
+
+Из книги:
+
+- `C# Dev Kit` (`ms-dotnettools.csdevkit`)
+
+- `C#` (`ms-dotnettools.csharp`)
+
+- `IntelliCode for C# Dev Kit` (`ms-dotnettools.vscodeintellicode-csharp`)
+
+- `MSBuild project tools` (`tintoy.msbuild-project-tools`/`tintoy`)
+
+- `SQL Server (mssql) for Visual Studio Code` (`ms-mssql.mssql`)
+
+- `REST Client` (`humao.rest-client`)
+
+- `ilspy-vscode` (`icsharpcode.ilspy-vscode`)
+
+Мои:
+
+- `Error lens` (`usernamehw.errorlens`)
+
+- `Markdown All in One` (`yzhang.markdown-all-in-one`)
+
+- `markdownlint` (`davidanson.vscode-markdownlint`)
+
+#### Управление расширениями в терминале
+
+- `code --list-extensions` - Перечисление установленных расширений
+
+- `code --install-extension <идентификатор>` - Установка расширения с указанным идентификатором
+
+- `code --uninstall-extension <идентификатор>` - Удаление расширения с указанным идентификатором
