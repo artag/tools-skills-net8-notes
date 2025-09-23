@@ -1,17 +1,17 @@
 version: '3.8'
 
-volumes:
-  sqlserver_data:
-  
 services:
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest # Or your preferred version like 2019-latest
+    container_name: mssql-server
     environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=${Sa_Password:12345}
-      - MSSQL_PID=Developer
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "12345"
+      MSSQL_PID: "Developer"
     ports:
-      - 1433:1433
+      - "1433:1433" # Maps host port 1433 to container port 1433
     volumes:
-      - sqlserver_data:/home/tema/db/mssql
-    restart: always
+      - mssql_data:/home/tema/db/mssql # Persist data outside the container
+
+volumes:
+  mssql_data:
