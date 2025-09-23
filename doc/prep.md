@@ -124,3 +124,25 @@ git remote set-url origin https://artag:{token}@github.com/artag/tools-skills-ne
 ```bash
 git push
 ```
+
+### Установить `mono-devel`
+
+Нужно, например, чтобы поставить утилиту `sn`, для генерации `.snk` файла для подписи сборок.
+
+```bash
+sudo apt install mono-devel
+```
+
+### Установить `docker` в ubuntu
+
+```bash
+sudo apt install docker.io
+sudo apt install docker-compose
+```
+
+### Установить в ostree настройки для podman для эмуляции docker
+
+```bash
+rpm-ostree install podman-compose podman-docker
+```
+
