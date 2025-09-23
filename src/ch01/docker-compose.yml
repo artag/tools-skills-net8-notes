@@ -1,0 +1,17 @@
+version: '3.8'
+
+volumes:
+  sqlserver_data:
+  
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=${Sa_Password:12345}
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver_data:/home/tema/db/mssql
+    restart: always
